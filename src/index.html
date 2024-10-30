@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>تسک دوره جاوااسکریپت</title>
+    <link rel="stylesheet" href="./styles/index.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="TransactionHeader">
+        <h1>لیست تراکنش ها</h1>
+        <div class="TransactionHeader-search">
+          <input
+            id="search"
+            class="hidden"
+            onkeyup="getTransaction()"
+            type="search"
+            placeholder="جستجو تراکنش"
+          />
+        </div>
+      </div>
+      <button onclick="loadAllTransaction()" id="loadTransaction">
+        بارگذاری تراکنش ها
+      </button>
+      <div id="transactionLists" class="hidden">
+        <h3>لیست تراکنش های شما</h3>
+        <table cellspacing="0">
+          <thead>
+            <tr>
+              <th>ردیف</th>
+              <th>نوع تراکنش</th>
+              <th id="btnPrice" onclick="sortByPrice()">
+                مبلغ
+                <i class="arrow left"></i>
+              </th>
+              <th>شماره پیگیری</th>
+              <th id="btnDate" onclick="sortByDate()">
+                تاریخ تراکنش
+                <i class="arrow left"></i>
+              </th>
+            </tr>
+          </thead>
+          <tbody id="transactionData"></tbody>
+        </table>
+      </div>
+    </div>
+    <script src="/node_modules/axios/dist/axios.min.js"></script>
+    <script src="./js/index.js"></script>
+  </body>
+</html>
